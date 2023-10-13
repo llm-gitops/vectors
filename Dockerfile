@@ -28,3 +28,4 @@ ENV POSTGRES_PASSWORD vectors
 COPY --from=0 /usr/share/postgresql/15/extension/vector*.sql /usr/share/postgresql/extension/
 COPY --from=0 /usr/share/postgresql/15/extension/vector.control /usr/share/postgresql/extension/vector.control
 COPY --from=0 /usr/lib/postgresql/15/lib/vector.so /usr/lib/postgresql/vector.so
+COPY postgresql-entrypoint.sh /var/lib/postgres/initdb/postgresql-entrypoint.sh
