@@ -205,6 +205,8 @@ docker_setup_db() {
 	if [ -z "$dbAlreadyExists" ]; then
 		POSTGRES_DB= docker_process_sql --dbname postgres --set db="$POSTGRES_DB" <<-'EOSQL'
 			CREATE DATABASE :"db" ;
+		EOSQL
+		POSTGRES_DB= docker_process_sql --dbname postgres --set db="$POSTGRES_DB" <<-'EOSQL'
 			CREATE EXTENSION vector ;
 		EOSQL
 		echo
