@@ -206,7 +206,7 @@ docker_setup_db() {
 		POSTGRES_DB= docker_process_sql --dbname postgres --set db="$POSTGRES_DB" <<-'EOSQL'
 			CREATE DATABASE :"db" ;
 		EOSQL
-		POSTGRES_DB= docker_process_sql --dbname postgres --set db="$POSTGRES_DB" <<-'EOSQL'
+		docker_process_sql --dbname "$POSTGRES_DB" <<-'EOSQL'
 			CREATE EXTENSION vector ;
 		EOSQL
 		echo
