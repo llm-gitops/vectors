@@ -19,7 +19,7 @@ RUN apt-get update && \
 		apt-mark unhold locales && \
 		rm -rf /var/lib/apt/lists/*
 
-FROM ghcr.io/llm-gitops/postgres:15.4
+FROM ghcr.io/weave-ai/images/postgres:15.5
 
 ENV POSTGRES_USER     vectors
 ENV POSTGRES_DB       vectors

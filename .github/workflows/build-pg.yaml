@@ -30,10 +30,6 @@ jobs:
           registry: ghcr.io
           username: chanwit
           password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: distroless/actions/apko-publish@main
-        with:
-          config: postgres-15.4.yaml
-          tag: ghcr.io/llm-gitops/postgres:15.4
       - name: Fetch pgvector
         run: |
           git clone https://github.com/pgvector/pgvector
@@ -49,4 +45,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/llm-gitops/vectors:v1.0.0
+            ghcr.io/weave-ai/vectors:v1.0.0
